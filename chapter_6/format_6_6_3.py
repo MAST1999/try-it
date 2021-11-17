@@ -7,8 +7,12 @@ snippets of code are executed?:
 def main():
     """This is the start of the application"""
 
+    # pylint: disable=unused-format-string-argument
+    # pylint: disable=consider-using-f-string
+
     long_string = "{1:{0}}".format(3, 4)
-    # the first number is the width of the field, the second is the number to be formatted in that field
+    # the first number is the width of the field,
+    # the second is the number to be formatted in that field
     # 4
     print(long_string)
 
@@ -22,7 +26,8 @@ def main():
     # 1
     print(long_string)
 
-    long_string = "{a:{b}}:{0:$>5}".format(3, 4, a=1, b=5, c=10)
+    # pylint: disable=too-many-format-args
+    long_string = "{a:{b}}:{0:$>2}".format(3, 4, a=1, b=5, c=10)
     # this is a combination of the other two snippets
     # 1:$$$$3
     print(long_string)
